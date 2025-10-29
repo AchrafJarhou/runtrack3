@@ -17,7 +17,7 @@ function jourtravaille(date) {
     "25-12-2020",
   ];
   const jour = date.getDate();
-  const mois = date.getMonth() + 1; // Les mois commencent à 0
+  const mois = date.getMonth(); // Les mois commencent à 0
   const annee = date.getFullYear();
   const dateStr = `${jour}-${mois}-${annee}`;
   const jourSemaine = date.getDay(); // 0 = dimanche, 6 = samedi
@@ -47,9 +47,7 @@ function jourtravaille(date) {
     "décembre",
   ];
 
-  const formattedDate = `${dayNames[jourSemaine]} ${jour} ${
-    monthNames[mois - 1]
-  } ${annee}`;
+  const formattedDate = `${dayNames[jourSemaine]} ${jour} ${monthNames[mois]} ${annee}`;
 
   if (joursFeries2020.includes(dateStr)) {
     console.log(`Le ${formattedDate} est un jour férié`);
