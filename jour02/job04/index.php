@@ -6,13 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <article id ="citation" style="display:none">
-       
-       
-    </article>
-    <button id="btn"style="cursor:pointer">
-        afficher l'article
-    </button>
+    <textarea id="keylogger">
+    </textarea>
     <script src="script.js"></script>
 </body>
 </html>

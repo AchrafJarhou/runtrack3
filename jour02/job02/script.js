@@ -20,5 +20,6 @@ function showhide() {
     button.textContent = "cacher l'article";
   } else {
     article.style.display = "none";
+    button.textContent = "afficher l'article";
   }
 }
