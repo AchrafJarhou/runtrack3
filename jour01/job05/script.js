@@ -5,6 +5,7 @@
 
 //! version avec une boucle forEach
 
+
 function afficherjourssemaines() {
   const jourssemaines = [
     "Lundi",
