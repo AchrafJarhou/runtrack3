@@ -1,0 +1,12 @@
+body {
+  /* Page suffisamment longue pour permettre le scroll vertical */
+  min-height: 4096px;
+}
+footer {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  transition: background-color 0.2s ease;
+}
