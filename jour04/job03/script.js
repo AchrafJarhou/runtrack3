@@ -26,15 +26,11 @@ document.getElementById("filterBtn").addEventListener("click", () => {
   const type = document.getElementById("type").value;
 
   const results = pokemons.filter((pokemon) => {
-    if (id !== "") {
-      return pokemon.id.toString() === id;
-    } else if (name !== "") {
-      return pokemon.name.french.toLowerCase().includes(name);
-    } else if (type !== "") {
-      return pokemon.type.includes(type);
-    } else {
-      return pokemon;
-    }
+    return (
+      (!id || pokemon.id == id) &&
+      (!name || pokemon.name.french.toLowerCase().includes(name)) &&
+      (!type || pokemon.type.includes(type))
+    );
   });
   console.log(results);
 
