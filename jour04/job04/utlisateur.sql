@@ -1,0 +1,11 @@
+CREATE DATABASE utilisateurs CHARACTER SET utf8mb4;
+
+USE utilisateurs;
+DROP TABLE IF EXISTS utilisateurs;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL
+);
