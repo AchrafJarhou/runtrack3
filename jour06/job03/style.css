@@ -1,10 +1,18 @@
+/* Box-sizing pour rendre les calculs de largeur/padding prévisibles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   font-family: Arial, sans-serif;
+  align-content: flex-start;
 }
 
 /* Style de base des sections */
@@ -14,22 +22,29 @@ body {
   text-align: center;
   font-size: 20px;
   border-radius: 8px;
+  flex: 1 1 100%;
+  min-width: 200px; /* empêche les tuiles de devenir trop étroites */
 }
 
-/* >= 1600px → 4 colonnes */
-@media screen and (min-width: 1600px) {
+/* >= 1600px → 4 colonnes (3 gaps entre 4 colonnes) */
+@media screen and (min-width: 900px) {
+  .section {
+    flex: 1 1 calc((100% - 3 * 20px) / 4);
+  }
 }
 
-/* 768px → 1599px → 2 colonnes */
+/* 768px → 1599px → 2 colonnes (1 gap between 2 columns) */
 @media screen and (min-width: 768px) and (max-width: 900px) {
-  body {
-    grid-template-columns: repeat(2, 1fr);
+  .section {
+    flex: 1 1 calc((100% - 20px) / 2);
   }
 }
 
 /* <= 767px → 1 colonne */
 @media screen and (max-width: 767px) {
-  body {
-    grid-template-columns: 1fr;
+  .section {
+    flex: 1 1 100%;
+    padding: 20px;
+    font-size: 18px;
   }
 }
