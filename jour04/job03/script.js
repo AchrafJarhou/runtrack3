@@ -1,4 +1,7 @@
-let pokemons = [];
+let pokemons = localStorage.getItem("lastResults")
+  ? JSON.parse(localStorage.getItem("lastResults"))
+  : [];
+display(pokemons);
 
 // Charger fichier JSON + types dynamiques
 fetch("pokemon.json")
@@ -32,6 +35,7 @@ document.getElementById("filterBtn").addEventListener("click", () => {
       (!type || pokemon.type.includes(type))
     );
   });
+  localStorage.setItem("lastResults", JSON.stringify(results));
   console.log(results);
 
   display(results);

@@ -32,6 +32,7 @@ document.getElementById('formConnexion').addEventListener('submit', async (e)=>{
 
     const res = await req.json();
     
+    
     if(res.success){
         window.location.href = "index.php";
     } else {
